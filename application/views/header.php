@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -9,18 +5,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>application/views/css/style.css">
+<div class="col-md-12">
 
-	<title><?= $title ?> Home</title>
-	
+ <img src="<?= base_url() ?>application/views/img/Blog.png"></img>
+ 
+ <ul>
+  	<li><a href="http://localhost/blog/index.php/menu">Inicio</a></li>
+  	<li><a href="http://localhost/blog/index.php/blog/nueva">Nueva entrada</a></li>
+  	<li><a href="http://localhost/blog/index.php/blog/entradas">Ver entradas</a></li>
   
-</head>
-<body>
-     <div class="col-12lg-12"> 
-         <button class="btn btn-primary">Aceptar</button>
-
-   
-     </div>
-</body>
-</html>
+  </ul>
+  <li id="login"><a href="">Login</a></li>
+  </div>

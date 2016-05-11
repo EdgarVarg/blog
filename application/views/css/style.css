@@ -1,0 +1,123 @@
+ body{
+
+	  background-image: url('http://localhost/blog/application/views/img/bg.jpg');
+	  background-position: center center;
+	  background-repeat: no-repeat;
+
+	  background-attachment: fixed;
+	  background-size: cover;
+
+     } 
+	.col-md-12{
+		background:rgba(43, 134, 237, 0.52);
+        width: 100%;
+        padding-left: 20%;
+        height: auto;
+        -webkit-box-shadow: 0 0 10px 0 rgba(10,10,10,10);
+box-shadow: 0 0 10px 0 rgba(10,10,10,10);
+	}
+    .col-md-12 li{
+		
+        display: block;
+        float: left;
+        list-style: none;
+        padding-left: 10%;
+       
+	}
+	.col-md-12 a{
+      color: #fff;
+      font-family:  'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 30px;
+	}
+	.col-md-12 a:hover{
+      color: rgb(28, 255, 14);
+      text-decoration: none;
+	}
+	.col-md-12 img{
+		margin-top: 1%;
+		margin-left: -25%;
+      width: 80px;
+      height: 70px;
+      width: 160px;
+height: 95px;
+	}
+	.col-md-10 {
+    width: 69%;
+    margin-top: 6%;
+    margin-left: 18%;
+    background: rgba(255,255,255,0.6);
+    -webkit-box-shadow: 0 1px 15px 5px rgba(10,10,10,10);
+box-shadow: 0 1px 15px 5px rgba(10,10,10,10);
+      
+  
+
+}
+  	.col-md-10 h1{
+
+}
+ #titulo{
+  text-align: center;
+ 	border: 1px solid rgba(0,0,0,0);
+ 	color: #000;
+ 	background: rgba(255,255,255,0.9);
+    margin-top: 2%;
+    -webkit-border-radius: 10px 10px 10px 10px;
+     border-radius: 10px 10px 10px 10px;
+ }
+ #contenido{
+    border-radius: 10px 10px 10px 10px;
+ 	color:#000;
+ 	background: rgba(255,255,255,0.9);
+    margin-top: 2%;
+    height: 100%;
+
+ }
+  #contenido textarea{
+  	height: 600px;
+  	text-align: left;
+  	margin-left: 1%;
+  	width: 950px;
+
+ }
+  #fecha h1{
+  	text-align: right;
+
+ } 
+ #login {
+    margin-left: 14%;
+    margin-top: -9%;
+
+ }
+  #comentarios{
+     margin-top: 5%;
+margin-left: 0%;
+position: relative;
+margin-bottom: 5%;
+background: rgba(81, 236, 65, 0.87);
+-webkit-border-radius: 0 10px 30px 0;
+border-radius: 0 10px 30px 0;
+height: 30%; 
+  border: 1px solid rgba(0,0,0,0.1)
+ }
+  .btn-lg{
+   background:#27d7ab;
+   -webkit-border-radius: 10px 10px 10px 10px;
+   border-radius: 10px 10px 10px 10px;
+   border: 0px;
+   color: #fff;
+
+ }
+ #comentario textarea{
+     width: 840px;
+margin-left: 0;
+margin-top: 0;
+height: 200px;
+margin-bottom: 8px;
+
+ }
+  #autor{
+    font-size: 20px;
+    font-family: sans-serif;
+    float: right;
+
+  }
