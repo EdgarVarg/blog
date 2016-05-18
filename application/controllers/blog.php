@@ -119,6 +119,7 @@ class Blog extends CI_Controller {
             
 
            	 );
+
            }
            	function recibirusuario()
            {
@@ -147,22 +148,8 @@ class Blog extends CI_Controller {
             
 
            	 );
-                   # Include the Autoloader (see "Libraries" for install instructions)
-require 'application/vendor/autoload.php';
-use Mailgun\Mailgun;
 
-# Instantiate the client.
-$mgClient = new Mailgun('key-6e1864e0bbbf6e20133372ec5d0e8787');
-$domain = "sandbox41165099550640ebad5da087fb66be92.mailgun.org";
-
-# Make the call to the client.
-$result = $mgClient->sendMessage($domain, array(
-    'from'    => 'Excited User <edgarshadowwolf@gmail.com>',
-    'to'      => 'Baz <edgarshadowwolf@gmail.com>',
-    'subject' => 'Hello',
-    'text'    => 'Testing some Mailgun awesomness!'
-));
-                     
+            mail($_POST['id_entrada'], $_POST['comentario']);   
 
            $this->menu_model->nuevoComentario($data);
             redirect(base_url().'index.php/blog/entradas/'.$data['id_entrada']);
