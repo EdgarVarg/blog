@@ -5,13 +5,19 @@ class Menu extends CI_Controller {
               {
               	parent::__construct();
               	$this->load->helper('form');
+
               	$this->load->model('menu_model');
               }
               function index()
               {
               	$this->load->view('menu');
               	$this->load->view('header');
+                $this->load->view('registrarse');
+              
+
               }
+            
+              
           
    
    }

@@ -8,14 +8,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>application/views/css/style.css">
 <div class="col-md-12">
-
- <img src="<?= base_url() ?>application/views/img/Blog.png"></img>
- 
+<div>
+ <img src="<?= base_url() ?>application/views/img/Blog.png">
+ <a href="http://localhost/blog/index.php/menu"><img src="<?= base_url() ?>application/views/img/row.png" id="row"></a>
+ <a href="http://localhost/blog/index.php/blog/entradas"><img src="<?= base_url() ?>application/views/img/row2.png" id="row2"></a>
+ </div>
  <ul>
-  	<li><a href="http://localhost/blog/index.php/menu">Inicio</a></li>
-  	<li><a href="http://localhost/blog/index.php/blog/nueva">Nueva entrada</a></li>
-  	<li><a href="http://localhost/blog/index.php/blog/entradas">Ver entradas</a></li>
+  	<li><a href="http://localhost/blog/index.php/menu">Registrate</a></li>
+  	<!--<li><a href="http://localhost/blog/index.php/blog/nueva">Nueva entrada</a></li>-->
+  	<li><a href="http://localhost/blog/index.php/blog/entradasno">Ver entradas</a></li>
   
   </ul>
-  <li id="login"><a href="">Login</a></li>
+  <li id="login"><a href="http://localhost/blog/index.php/verifylogin">Iniciar Sesion</a></li>
   </div>

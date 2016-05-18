@@ -1,15 +1,18 @@
   <h1>Comentarios: </h1>
    <?php
-
-    foreach ($comentarios->result() as $comenta) { ?>
+   if (!($comentarios)) :
+   	      echo "no hay comentarios";
+          
+ 	   
+     else:
+     	  
+    foreach ($comentarios->result() as $comentari) { ?>
 
     <div id="comentarios">
-   
- 	<h3><?= $comenta->comentario;?> </h3>
+ 	<h3><?= $comentari->comentario;?> </h3>
  	</div>
- 	   <?php }
-     
-   
+        <?php }
+   endif;
   ?>
  </body>
  </html>

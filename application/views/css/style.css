@@ -21,24 +21,24 @@ box-shadow: 0 0 10px 0 rgba(10,10,10,10);
         display: block;
         float: left;
         list-style: none;
-        padding-left: 10%;
+       padding-left: 12%;
        
 	}
 	.col-md-12 a{
       color: #fff;
       font-family:  'Open Sans', Arial, Helvetica, sans-serif;
       font-size: 30px;
+      text-shadow: 5px 5px 5px #706C75;
 	}
 	.col-md-12 a:hover{
       color: rgb(28, 255, 14);
       text-decoration: none;
 	}
 	.col-md-12 img{
-		margin-top: 1%;
+		margin-top: 2%;
 		margin-left: -25%;
-      width: 80px;
-      height: 70px;
-      width: 160px;
+      margin-left: 26.5%;
+      width: 250px;
 height: 95px;
 	}
 	.col-md-10 {
@@ -59,7 +59,7 @@ box-shadow: 0 1px 15px 5px rgba(10,10,10,10);
   text-align: center;
  	border: 1px solid rgba(0,0,0,0);
  	color: #000;
- 	background: rgba(255,255,255,0.9);
+ 	background: rgba(204,204,204,0.9);
     margin-top: 2%;
     -webkit-border-radius: 10px 10px 10px 10px;
      border-radius: 10px 10px 10px 10px;
@@ -67,7 +67,7 @@ box-shadow: 0 1px 15px 5px rgba(10,10,10,10);
  #contenido{
     border-radius: 10px 10px 10px 10px;
  	color:#000;
- 	background: rgba(255,255,255,0.9);
+ 	  background: rgba(204,204,204,0.9);
     margin-top: 2%;
     height: 100%;
 
@@ -84,8 +84,14 @@ box-shadow: 0 1px 15px 5px rgba(10,10,10,10);
 
  } 
  #login {
-    margin-left: 14%;
+    margin-left: 65%;
+margin-top: -13%;
+
+ }
+  #login2 {
+    margin-left: 80%;
     margin-top: -9%;
+
 
  }
   #comentarios{
@@ -120,4 +126,53 @@ margin-bottom: 8px;
     font-family: sans-serif;
     float: right;
 
+  }
+  hr{
+    background: blue;
+    height: 1px;
+
+
+  }
+  #row{
+    width: 66px;
+height: 85px;
+  margin-left: -28%;
+  }
+    #row2{
+    width:66px; 
+  height: 85px;
+  margin-left: 0%;
+  }
+  .formula{
+    font-family: sans-serif;
+    color: black;
+      margin-top: 5%;
+    background: rgba(227, 242, 151, 0.7);
+    width: 169%;
+    margin-left: 75%;
+    text-align: center;
+    height: 60%;
+    -webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+    -webkit-box-shadow: 0 0 5px 5px #C4C4C4;
+box-shadow: 0 0 5px 5px #C4C4C4;
+
+}
+  
+    .formula form{
+     padding-top: 5%;
+     padding-bottom: 10%;
+  }
+  .formula label{
+       font-family: sans-serif;
+    color: black;
+
+  }
+     .formula input{
+     height: 50px;
+     width: 374px;
+  }
+  h6 {
+    font-size: 5px;
+ 
   }

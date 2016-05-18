@@ -1,4 +1,6 @@
+ 
  <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+session_start();
 
 class Blog extends CI_Controller {
        function __construct()
@@ -7,23 +9,103 @@ class Blog extends CI_Controller {
               	$this->load->helper('form');
               	$this->load->model('menu_model');
               }
+              function index()
+ {
+ 		$this->load->view('menu');
+   if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['username'] = $session_data['username'];
+     $this->load->view('registrado', $data);
+
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+ }
+
+ 
 
                function nueva()
            {
-           	 $this->load->view('header');
+
+           	if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['username'] = $session_data['username'];
+     $this->load->view('entradas', $data);
+   }
+           	 $this->load->view('registrado');
            	 $this->load->view('nueva');
 
            } 
             function entradas()
            {
-           $data['entradas'] = $this->menu_model->mostrarEntradas();
-           $dato['comentarios'] = $this->menu_model->mostrarComentarios();
-            	$this->load->view('header');
-            	$this->load->view('contenido',$data);
-            	$this->load->view('comentar',$dato);
-            	$this->load->view('comentarios',$dato);
+           	$data['segmento']= $this->uri->segment(3);
+          if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['username'] = $session_data['username'];
+     $this->load->view('entradas', $data);
+   }
+          
+            	
+            	if (!$data['segmento']) {
+            		$this->load->view('registrado');
+            		 $data['entradas'] = $this->menu_model->mostrarEntradas();
+            		 $dato['comentarios'] = $this->menu_model->mostrarComentarios();
+            		   $this->load->view('contenido',$data);
+            	}else{
+
+                    $this->load->view('id');
+            		 $data['entradas'] = $this->menu_model->mostrarEntrada($data['segmento']);
+            		  $data['comentarios'] = $this->menu_model->mostrarComentario($data['segmento']);
+            		  $this->load->view('contenido',$data);
+            		 $this->load->view('comentar',$data);
+            	     $this->load->view('comentarios',$data);
+                    $this->load->view('recibe');
+            	}
+            	
+            
 
            } 
+            function entradasno()
+           {
+           	          	if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['username'] = $session_data['username'];
+     $this->load->view('entradas', $data);
+   }
+
+           	$data['segmento']= $this->uri->segment(3);
+          
+          
+            	$this->load->view('header');
+            	if (!$data['segmento']) {
+            		 $data['entradas'] = $this->menu_model->mostrarEntradas();
+            		 $dato['comentarios'] = $this->menu_model->mostrarComentarios();
+            		   $this->load->view('contenidono',$data);
+            	}else{
+            		 $data['entradas'] = $this->menu_model->mostrarEntrada($data['segmento']);
+            		  $data['comentarios'] = $this->menu_model->mostrarComentario($data['segmento']);
+            		  $this->load->view('contenidono',$data);
+            		  
+            	     $this->load->view('comentarios',$data);
+            	}
+            	
+            
+
+           } 
+
+           function login()
+           {
+           	$this->load->view('menu');
+           	 $this->load->view('login');
+           }
+
 
            function recibirdatos()
            {
@@ -37,25 +119,66 @@ class Blog extends CI_Controller {
             
 
            	 );
-
-           $this->menu_model->nuevaEntrada($data);
-           header('Location: http://localhost/blog/index.php/blog/entradas');
-
            }
-            function recibirComentario()
+           	function recibirusuario()
            {
            	$data = array(
-           		'comentario' => $this->input->post('comentario')
+           		'username' => $this->input->post('username'),
+           		'password' => $this->input->post('password')
 
 
             
 
            	 );
 
+
+
+           $this->menu_model->nuevousuario($data);
+           header('Location: http://localhost/blog/index.php/blog/entradasno');
+                     
+           }
+            function recibirComentario()
+           {
+                  
+           	$data = array(
+           		'comentario' => $this->input->post('comentario'),
+           		'id_entrada' => $this->input->post('id_entrada')
+
+            
+
+           	 );
+                   # Include the Autoloader (see "Libraries" for install instructions)
+require 'application/vendor/autoload.php';
+use Mailgun\Mailgun;
+
+# Instantiate the client.
+$mgClient = new Mailgun('key-6e1864e0bbbf6e20133372ec5d0e8787');
+$domain = "sandbox41165099550640ebad5da087fb66be92.mailgun.org";
+
+# Make the call to the client.
+$result = $mgClient->sendMessage($domain, array(
+    'from'    => 'Excited User <edgarshadowwolf@gmail.com>',
+    'to'      => 'Baz <edgarshadowwolf@gmail.com>',
+    'subject' => 'Hello',
+    'text'    => 'Testing some Mailgun awesomness!'
+));
+                     
+
            $this->menu_model->nuevoComentario($data);
-           header('Location: http://localhost/blog/index.php/blog/entradas');
+            redirect(base_url().'index.php/blog/entradas/'.$data['id_entrada']);
+            
+        	
+           
 
            }
+           function logout()
+ { 
+   $this->session->unset_userdata('logged_in');
+   session_destroy();
+   redirect('blog/entradasno', 'refresh');
+ }
          
+
 }
+
 ?>

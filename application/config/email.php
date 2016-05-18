@@ -1,0 +1,10 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); 
+$config['mailtype'] = 'html'; 
+$config['charset'] = 'utf-8'; 
+$config['protocol'] = 'smtp'; 
+$config['smtp_host'] = 'ssl://smtp.mailgun.org';
+$config['smtp_port'] = 465; $config['smtp_user'] = '[postmaster@sandbox41165099550640ebad5da087fb66be92.mailgun.org]';
+$config['smtp_pass'] = '[2fbcc5d22a2714ca4bbb217e5eb0f71d]'; 
+$config['smtp_timeout'] = '4'; 
+$config['crlf'] = '\n';
+$config['newline'] = '\r\n';

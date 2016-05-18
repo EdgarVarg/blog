@@ -9,6 +9,7 @@
  <div class="col-md-10">
  <?= form_open('blog/recibirdatos')?>
 <?php
+
    $titulo = array(
      'name' => 'titulo'
    	);
@@ -33,9 +34,10 @@
  	</h1>
  	</div>
  	<div id="autor">
- 	<h1>Autor:<?= form_input($autor) ?></h1>
+ 	<h1>Autor:
+ 	<input type="text" name="autor" value="<?php echo $username; ?>"></input></h1>
  	</div>
- 	<?= form_submit('','Publicar')?>
+ 	  <input class="btn-lg"type="submit" value="Publicar" ></input>
  </div>
  
  <?= form_close()?>
