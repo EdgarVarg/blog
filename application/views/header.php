@@ -10,8 +10,6 @@
 <div class="col-md-12">
 <div>
  <img src="<?= base_url() ?>application/views/img/Blog.png">
- <a href="http://localhost/blog/index.php/menu"><img src="<?= base_url() ?>application/views/img/row.png" id="row"></a>
- <a href="http://localhost/blog/index.php/blog/entradas"><img src="<?= base_url() ?>application/views/img/row2.png" id="row2"></a>
  </div>
  <ul>
   	<li><a href="http://localhost/blog/index.php/menu">Registrate</a></li>
