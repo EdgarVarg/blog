@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Menu_model extends CI_Model
+class Verifylogin_Controller extends CI_Controller
 {
     function __construct()
     {

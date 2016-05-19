@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -10,8 +11,7 @@
 <div class="col-md-12">
 <div>
  <img src="<?= base_url() ?>application/views/img/Blog.png">
- <a href="http://localhost/blog/index.php/blog/nueva"><img src="<?= base_url() ?>application/views/img/row.png" id="row"></a>
- <a href="http://localhost/blog/index.php/blog/entradas"><img src="<?= base_url() ?>application/views/img/row2.png" id="row2"></a>
+
  </div>
  <ul>
 
