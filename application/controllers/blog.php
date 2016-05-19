@@ -2,19 +2,21 @@
  <?php
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-session_start();
 
+session_start();
 class Blog extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->load->helper('form');
-        
         $this->load->model('menu_model');
+
     }
+
     function index()
     {
+
         $this->load->view('menu');
         if ($this->session->userdata('logged_in')) {
             $session_data     = $this->session->userdata('logged_in');
@@ -123,7 +125,7 @@ class Blog extends CI_Controller
     {
         $data = array(
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password')
+            'pass' => $this->input->post('pass')
             
             
             
@@ -133,7 +135,8 @@ class Blog extends CI_Controller
         
         
         $this->menu_model->nuevousuario($data);
-        header('Location: http://localhost/blog/index.php/blog/entradasno');
+       
+        header('Location: http://localhost/blog/index.php/verifylogin');
         
     }
     function recibirComentario()
@@ -162,7 +165,7 @@ class Blog extends CI_Controller
     {
         $this->session->unset_userdata('logged_in');
         session_destroy();
-        redirect('blog/entradasno', 'refresh');
+        redirect('verifylogin', 'refresh');
     }
     
     

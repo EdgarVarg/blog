@@ -25,7 +25,8 @@ class Menu_model extends CI_Model
         if ($query->num_rows() > 0)
             return $query;
         else
-            return false;
+            return false
+            echo "no hay entradas";;
     }
     function mostrarEntrada($id)
     {
@@ -64,13 +65,10 @@ class Menu_model extends CI_Model
         else
             return false;
     }
-    function nuevousuario($dato)
+    function nuevousuario($data)
     {
         
-        $this->db->insert('usuarios', array(
-            'username' => $dato['username'],
-            'password' => $dato['password']
-        ));
+        $this->db->insert('usuarios', $data);
         
     }
 }

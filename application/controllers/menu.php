@@ -5,7 +5,6 @@ class Menu extends CI_Controller {
               {
               	parent::__construct();
               	$this->load->helper('form');
-
               	$this->load->model('menu_model');
               }
               function index()

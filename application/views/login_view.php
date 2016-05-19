@@ -19,10 +19,13 @@
      <label for="username">Username:</label><br>
      <input type="text" size="20"  name="username"/>
     </input><br><br>
-     <label for="password">Password:</label><br>
-     <input type="password" size="20" name="password"/>
+     <label for="pass">Password:</label><br>
+     <input type="password" size="20" name="pass"/>
      </input><br><br>
-     <input type="submit"class="btn-lg" value="Login"/>
+     <input type="submit" class="btn-lg" value="Login"/>
+     <br>
+     <br>
+     <a href="http://localhost/blog/index.php/menu"><input type="button" class="btn-lg" value="Registrarse"></a>
    </form>
    </div>
    </div>

@@ -21,7 +21,8 @@
      <h2>Contraseña:</h2>
      <input type="text"></input><br><br>  
   
-    <input class="btn-lg"type="submit" value="Entrar"></input>
+    <input class="btn-lg" type="submit" value="Entrar"></input>
+    
     </div>
     </div>
   
