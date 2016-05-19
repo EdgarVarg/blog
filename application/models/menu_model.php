@@ -25,8 +25,7 @@ class Menu_model extends CI_Model
         if ($query->num_rows() > 0)
             return $query;
         else
-            return false
-            echo "no hay entradas";;
+            return false;
     }
     function mostrarEntrada($id)
     {
