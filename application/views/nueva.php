@@ -1,5 +1,3 @@
-
-
  <head>
  <title>Nueva entrada</title>
 
@@ -11,11 +9,13 @@
 <?php
 
    $titulo = array(
-     'name' => 'titulo'
+     'name' => 'titulo',
+      'required'=>'true'
    	);
     $contenido = array(
      'name' => 'contenido',
-     'type' => 'textarea'
+     'type' => 'textarea',
+     'required'=>'true'
      
    	);
    	 $autor = array(
@@ -23,6 +23,11 @@
      'type' => 'textarea'
      
    	);
+       $email_autor = array(
+     'name' => 'email_autor',
+     'type' => 'textarea'
+     
+    );
 ?>
 
  	<div id="titulo">
@@ -30,14 +35,18 @@
  	</div>
  	<div id="contenido">
  	<h1>Contenido:<br>
+
  	<?= form_textarea($contenido)?>
  	</h1>
  	</div>
  	<div id="autor">
  	<h1>Autor:
- 	<input type="text" name="autor" value="<?php echo $username; ?>"></input></h1>
+
+  <input type="text" name="autor" value="<?php echo $username;?>"></h1>
+  <input type="text" name="email" value="<?php  echo $email; ?>">
+    <input type="text" name="id_autor" value="<?php  echo $id_user; ?>">
  	</div>
- 	  <input class="btn-lg"type="submit" value="Publicar" ></input>
+ 	  <input class="btn-lg" type="submit" value="Publicar"  ></input>
  </div>
  
  <?= form_close()?>

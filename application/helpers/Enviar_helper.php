@@ -3,7 +3,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 require 'application/vendor/autoload.php';
 use Mailgun\Mailgun;
-function maile($subject, $autor, $text)
+function maile($subject, $autor, $text,$email_comentario,$email_autor)
 {
     
     
@@ -13,8 +13,8 @@ function maile($subject, $autor, $text)
     
     # Make the call to the client.
     $result = $mgClient->sendMessage($domain, array(
-        'from' => 'Excited User <edgarshadowwolf@gmail.com>',
-        'to' => 'Baz <edgarshadowwolf@gmail.com>',
+        'from' => 'Excited User <'.$email_comentario.'>',
+        'to' => 'Baz <'.$email_autor.'>',
         'subject' => 'Titulo de la entrada:' . ' ' . $subject,
         'text' => 'Autor:' . ' ' . $autor . ' 
     ' . 'Comentario:' . $text

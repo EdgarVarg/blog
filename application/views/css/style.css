@@ -72,11 +72,30 @@ box-shadow: 0 1px 15px 5px rgba(10,10,10,10);
     height: 100%;
 
  }
+  #contenidop{
+    border-radius: 10px 10px 10px 10px;
+  color:#000;
+    background: rgba(204,204,204,0.9);
+    margin-top: 2%;
+    height: 100%;
+
+ }
   #contenido textarea{
   	height: 600px;
   	text-align: left;
   	margin-left: 1%;
   	width: 950px;
+
+
+ }
+   #contenidop textarea{
+    height: 600px;
+    text-align: left;
+    margin-left: 1%;
+    width: 99%;
+    resize: none;
+    background: rgba(0,0,0,0);
+    border: none;
 
  }
   #fecha h1{
@@ -111,6 +130,7 @@ height: 30%;
    border-radius: 10px 10px 10px 10px;
    border: 0px;
    color: #fff;
+   
 
  }
  #comentario textarea{
@@ -119,13 +139,22 @@ margin-left: 0;
 margin-top: 0;
 height: 200px;
 margin-bottom: 8px;
+resize: none;
+    background: rgba(125,125,100,0.5);
+    border: none;
 
  }
   #autor{
     font-size: 20px;
     font-family: sans-serif;
-    float: right;
+    float: left;
+    margin-top: -5%;
 
+  }
+   #autor input{
+     border: none;
+     background: rgba(0,0,0,0);
+     margin-top: 6%;
   }
   hr{
     background: blue;

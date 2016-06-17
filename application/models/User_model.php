@@ -1,11 +1,12 @@
-<?php Class User extends CI_Model
+<?php Class User_model extends CI_Model
 {
- function login($username, $pass)
+ function login($username, $pass,$email)
  {
-   $this -> db -> select('id, username, pass');
+   $this -> db -> select('id_user, username, pass, email');
    $this -> db -> from('usuarios');
    $this -> db -> where('username', $username);
    $this -> db -> where('pass', ($pass));
+
    $this -> db -> limit(1);
  
    $query = $this -> db -> get();

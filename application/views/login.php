@@ -17,9 +17,9 @@
   
     ?>
     <h2>Usuario:</h2>
-    <input type="text"></input><br>
+    <input type="text" required="true"></input><br>
      <h2>Contraseña:</h2>
-     <input type="text"></input><br><br>  
+     <input type="text" required="true"></input><br><br>  
   
     <input class="btn-lg" type="submit" value="Entrar"></input>
     

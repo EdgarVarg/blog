@@ -5,7 +5,7 @@ class VerifyLogin extends CI_Controller {
  function __construct()
  {
    parent::__construct();
-   $this->load->model('user','',TRUE);
+   $this->load->model('User_model','',TRUE);
  }
  
  function index()
@@ -15,6 +15,7 @@ class VerifyLogin extends CI_Controller {
  
    $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
    $this->form_validation->set_rules('pass', 'Pass', 'trim|required|xss_clean|callback_check_database');
+  
  
    if($this->form_validation->run() == FALSE)
    {
@@ -33,18 +34,21 @@ class VerifyLogin extends CI_Controller {
  {
    //Field validation succeeded.  Validate against database
    $username = $this->input->post('username');
- 
+   $email = $this->input->post('email');
    //query the database
-   $result = $this->user->login($username, $pass);
- 
+   $result = $this->User_model->login($username, $pass ,$email);
+   if ($username = null) {
+     echo "Por favor ingrese un usuario";
+   }
    if($result)
    {
      $sess_array = array();
      foreach($result as $row)
      {
        $sess_array = array(
-         'id' => $row->id,
-         'username' => $row->username
+         'id_user' => $row->id_user,
+         'username' => $row->username,
+         'email' => $row->email
        );
        $this->session->set_userdata('logged_in', $sess_array);
      }
