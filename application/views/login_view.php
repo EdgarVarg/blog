@@ -1,36 +1,35 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="<?= base_url() ?>application/views/css/style.css">
+<div class="col-md-4 col-md-offset-4">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <div class="formula">
 
-   <title>Login</title>
- 
- <div class="col-md-4">
-     <div class="formula">
    <h1>Login</h1>
-   <?php echo validation_errors(); ?>
+ 
    <?php echo form_open('verifylogin'); ?>
     <?php echo $this->session->flashdata('registrado'); ?>
+    <?php echo $this->session->flashdata('vacio2'); ?>
+    <?php echo $this->session->flashdata('correobad'); ?>
+        <?php echo $this->session->flashdata('recover'); ?>
+    
      <label for="username">Username:</label><br>
-     <input type="text" size="20"  name="username"/>
+     <input type="text" size="20"  name="username" required="true" />
     </input><br><br>
      <label for="pass">Password:</label><br>
-     <input type="password" size="20" name="pass"/>
+     <input type="password" size="20" name="pass" required="true" />
      </input><br><br>
-     <input type="submit" class="btn-lg" value="Login"/>
+
+     <input type="submit" class="btn-lg" value="Login"  style="padding:3%;" />
      <br>
      <br>
-     <a href="http://localhost/blog/index.php/menu"><input type="button" class="btn-lg" value="Registrarse"></a>
+     
+     <a href="menu"><input type="button" class="btn-lg" value="Registrarse" style="padding:3%;" ></a>
+     <br>
+     <br>
+     <a href="blog/recuperar_pass_view" style="color:#fff;text-shadow: 5px 5px 5px #000000;font-family:'Open Sans';">olvidaste tu contraseña?</a>
    </form>
-   </div>
-   </div>
- </body>
-</html>
+    <?= form_close() ?>
+      
+
+</div>
+</div>

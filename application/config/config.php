@@ -22,8 +22,11 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Blog/';
+$config['base_url'] = 'http://localhost/Blog_actualizado/';
+$config['encryption_key'] = 'REALLY_LONG_NUMBER';
 
+ $config['global_xss_filtering'] = TRUE;
+ $config['xss_exclude_uris'] = array('Blog/recibirdatos'); 
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -34,7 +37,12 @@ $config['base_url'] = 'http://localhost/Blog/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
+$config['upload_path'] = 'application/uploads/';
+$config['allowed_types'] = 'gif|jpg|png';
+$config['max_size'] = '2000';
+$config['max_width'] = '2024';
+$config['max_height'] = '2008';
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +85,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language'] = 'spanish';
 
 /*
 |--------------------------------------------------------------------------

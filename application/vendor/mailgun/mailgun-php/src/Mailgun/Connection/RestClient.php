@@ -124,7 +124,7 @@ class RestClient{
 			$result->http_response_body = $data && $jsonResponseData === null ? $data : $jsonResponseData;
 		}
 		elseif($httpResponseCode == 400){
-			throw new MissingRequiredParameters(EXCEPTION_MISSING_REQUIRED_PARAMETERS);
+				throw new MissingRequiredParameters(EXCEPTION_MISSING_REQUIRED_PARAMETERS);
 		}
 		elseif($httpResponseCode == 401){
 			throw new InvalidCredentials(EXCEPTION_INVALID_CREDENTIALS);

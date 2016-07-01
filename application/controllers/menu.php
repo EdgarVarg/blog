@@ -9,11 +9,17 @@ class Menu extends CI_Controller {
               }
               function index()
               {
-              	$this->load->view('menu');
-              	$this->load->view('header');
-                $this->load->view('registrarse');
+                if($this->session->userdata('logged_in'))
+                {
+                redirect('blog/entradas');
               
+                
+                }else{
+                $this->load->view('menu');
+                $this->load->view('header');
+                $this->load->view('registrarse');
 
+                }
               }
             
               
